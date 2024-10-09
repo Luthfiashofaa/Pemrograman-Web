@@ -1,0 +1,286 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #23262d;
+}
+
+.container {
+  position: relative;
+}
+
+.background-image {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 5;
+}
+
+header {
+  position: absolute;
+  width: 80%;
+  border-radius: 100px;
+  height: 20px;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background: linear-gradient(135deg, rgba(255, 255, 255, alpha), #999999);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Bayangan untuk efek 3D */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10; /* Menempatkan header di atas gambar */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: -9px;
+}
+
+.logo img {
+  width: 150px;
+}
+
+nav {
+  margin-left: 100px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 0px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 15px;
+  white-space: nowrap;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600; /* Semi Bold */
+}
+
+.login-button {
+  display: flex;
+  align-items: center;
+  margin-left: 290px;
+  background: white;
+  border-radius: 30px;
+  padding: 10px 35px;
+  border: none;
+  cursor: pointer;
+}
+
+.description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 15;
+}
+
+.description h1 {
+  color: white;
+  text-align: center;
+  font-size: 33pt;
+  white-space: nowrap;
+  font-family: sans-serif;
+}
+
+.description p {
+  color: white;
+  text-align: center;
+  padding: 0px 120px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.explore-button {
+  position: absolute;
+  top: 83%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 30px;
+  padding: 10px 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.explore-button img {
+  width: 10pt;
+  margin-left: 10px;
+}
+
+.catalog h1 {
+  color: white;
+  margin-left: 20pt;
+}
+
+.list-home {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-radius: 30px;
+  gap: 10px;
+}
+
+.home {
+  background-color: white;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 275px;
+  text-align: left;
+  border-radius: 10pt;
+}
+
+.home img {
+  width: 96%;
+  margin: 5px 5px 5px 5px;
+  height: 200px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.home h3 {
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-top: 0;
+  color: #fcad11;
+}
+
+.home h5 {
+  margin-left: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 505;
+  font-style: normal;
+}
+
+.home h6 {
+  margin-left: 10px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 510;
+  font-style: normal;
+}
+
+.more-button {
+  margin-left: 580px;
+  background: #fcad11;
+  border-radius: 30px;
+  padding: 10px 35px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10pt;
+}
+
+footer{
+    text-align: center;
+    color:white;
+    margin-bottom:20pt;
+    margin-top:10pt;
+}
+
+footer .container-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 100%;
+}
+
+.contact{
+    margin:0;
+    padding:0;
+}
+
+.contact h6{
+    display:flex;
+    margin-left:15pt;
+    font-size:15pt;
+    font-family: "Poppins", sans-serif;
+    font-weight:150;
+    white-space: nowrap;
+    font-style: thin;
+    margin-bottom:10pt;
+    
+}
+
+.contact h5{
+    margin-left:15pt;
+    display:flex;
+    font-size:15pt;
+    white-space: nowrap;
+    margin-top:0;
+    margin-bottom:10pt;
+}
+
+.sell {
+    text-align: center;
+    flex-grow: 1; /* Memberikan ruang lebih agar sell bisa memusat */
+    margin-left:150pt;
+}
+
+.sell h5{
+    margin-top:0;
+    padding:0;
+    margin-bottom:0;
+}
+
+.call-button {
+    background: white;
+    border-radius: 30px;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    margin-top:10pt;
+    margin-bottom: 10pt;
+}
+
+.address{
+    flex-grow: 1; /* Memberikan ruang lebih agar sell bisa memusat */
+    margin-left:85pt;
+    margin-top:15pt;
+}
+
+.address h5, h6{
+    text-align:left;
+    margin-bottom:0pt;
+}
+
+.address h6{
+    font-size:10pt;
+    font-family: "Poppins", sans-serif;
+    font-weight:150;
+    white-space: nowrap;
+    font-style: thin
+    margin-top:0;
+}
+.address h5{
+    margin-bottom:0;
+}
+  
+
