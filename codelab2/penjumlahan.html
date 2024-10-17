@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Penjumlahan</title>
+    <link rel="stylesheet" href="penjumlahan.css">
+
+</head>
+<body>
+    <div class="container">
+        <h3>Penjumlahan</h3>
+        <h5>Bilangan Pertama</h5>
+        <input type="number" id="num1" placeholder="Inputkan bilangan pertama">
+        <h5>Bilangan Kedua</h5>
+        <input type="number" id="num2" placeholder="Inputkan bilangan kedua">
+        <div class="button">
+            <button onclick="sum()">Jumlahkan</button>
+            <button onclick="reset()">Reset</button>
+        </div>
+
+        <div class="result" style="text-align: center;" id="result">
+            <h6 style="font-weight: 300;"></h6>
+        </div>
+    </div>
+
+    <script>
+        function sum(){
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+
+            const sum = num1 + num2;
+
+            document.getElementById('result').innerText = `Hasil: ${sum}`;
+        }
+
+        function reset(){
+            document.getElementById('num1').value = '';
+            document.getElementById('num2').value = '';
+            document.getElementById('result').innerText = '0';
+        }
+    </script>
+</body>
+</html>
