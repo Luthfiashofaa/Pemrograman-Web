@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e3e9ff;
+    margin: 0;
+    flex-direction: column;
+}
+
+.container {
+    width: 350px;
+    height: 35px;
+    background: #af7eeb;
+    padding: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 10pt;
+}
+
+.container h6 {
+    display: flex;
+    margin-left: 32%;
+    font-size: 10pt;
+    color: white;
+}
+
+.container2 {
+    width: 350px;
+    height: auto; 
+    background: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    padding: 7pt;
+    padding-top: 20pt;
+    margin-top: 20pt;
+    flex-direction: column;
+}
+
+.input-todo {
+    border-color: #af7eeb;
+    border-radius: 2pt;
+    border-width: 1.5px;
+    border-style: solid;
+    width: 70%;
+    height: 20pt;
+    padding: 3pt;
+    padding-left: 5pt;
+    margin-right: 7pt;
+}
+
+.list {
+    width: 350px;
+    height: auto;
+    background: #af7eeb;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10pt;
+}
+
+.add {
+    display: flex;
+    flex-direction: row;
+}
+
+.add-btn {
+    width: 60pt;
+    height: 28pt;
+    border: none;
+    background-color: #af7eeb;
+    border-radius: 2pt;
+    color: white;
+}
+
+.activity {
+    padding: 5pt;
+    border-bottom: 1px solid #af7eeb;
+    cursor: pointer;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.activity-input {
+    width: 70%;
+    padding: 3pt;
+    border: 1.5px solid #af7eeb;
+    border-radius: 2pt;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ff3b3b;
+    font-size: 16pt;
+}

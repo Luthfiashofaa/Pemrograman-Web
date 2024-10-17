@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do List</title>
+    <link rel="stylesheet" href="Todolist.css">
+</head>
+<body>
+    <div class="container">
+        <img src="img/humberger.png" alt="" />
+        <h6>To Do List</h6>
+    </div>
+
+    <div class="container2">
+        <div class="list" id="activity-list"></div>
+        <div class="add">
+            <input
+                class="input-todo"
+                type="text"
+                id="input-todo"
+                placeholder="Input your Activity"
+            />
+            <button class="add-btn" id="add-button">Add</button>
+        </div>
+    </div>
+
+    <script>
+        const inputTodo = document.getElementById("input-todo");
+        const addButton = document.getElementById("add-button");
+        const activityList = document.getElementById("activity-list");
+
+
+        function addActivity(activity) {
+            const activityItem = document.createElement("div");
+            activityItem.className = "activity";
+
+            const activityText = document.createElement("span");
+            activityText.textContent = activity;
+            activityText.onclick = function () {
+                editActivity(activityItem, activityText);
+            };
+
+            const deleteButton = createDeleteButton(activityItem);
+            activityItem.appendChild(activityText);
+            activityItem.appendChild(deleteButton);
+            activityList.appendChild(activityItem);
+        }
+
+        function editActivity(activityItem, activityText) {
+            const currentText = activityText.textContent;
+            const inputField = document.createElement("input");
+            inputField.className = "activity-input";
+            inputField.value = currentText;
+
+            activityItem.innerHTML = "";
+            activityItem.appendChild(inputField);
+            inputField.focus();
+
+            inputField.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    const newText = inputField.value;
+                    if (newText) {
+                        activityText.textContent = newText;
+                        activityItem.innerHTML = ""; 
+                        activityItem.appendChild(activityText);
+                        const deleteButton = createDeleteButton(activityItem);
+                        activityItem.appendChild(deleteButton);
+                        activityItem.onclick = function () {
+                            editActivity(activityItem, activityText);
+                        };
+                    } else {
+                        activityText.textContent = currentText;
+                        activityItem.appendChild(activityText);
+                        const deleteButton = createDeleteButton(activityItem); 
+                        activityItem.appendChild(deleteButton);
+                    }
+                }
+            });
+
+            inputField.addEventListener("blur", function () {
+                const newText = inputField.value;
+                if (newText) {
+                    activityText.textContent = newText;
+                } else {
+                    activityText.textContent = currentText;
+                }
+                activityItem.innerHTML = "";
+                activityItem.appendChild(activityText);
+                const deleteButton = createDeleteButton(activityItem);
+                activityItem.appendChild(deleteButton);
+            });
+        }
+
+        function createDeleteButton(activityItem) {
+            const deleteButton = document.createElement("img");
+            deleteButton.className = "delete-btn";
+            deleteButton.src = "img/trash.png";
+            deleteButton.alt = "Delete"; 
+            deleteButton.style.width = "20px"; 
+            deleteButton.style.height = "20px"; 
+            deleteButton.onclick = function (event) {
+                event.stopPropagation();
+                activityList.removeChild(activityItem);
+            };
+            return deleteButton;
+        }
+
+        addButton.addEventListener("click", function () {
+            const activity = inputTodo.value;
+
+            if (activity) {
+                addActivity(activity);
+                inputTodo.value = "";
+            }
+        });
+    </script>
+</body>
+</html>
